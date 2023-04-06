@@ -79,7 +79,7 @@ int	map_validations2(t_data *data)
 	exit_position(data);
 	if (map_path(data, map_dup, data->player_x, data->player_y) != 1)
 	{
-		ft_printf("There is no valid path on this map!\n");
+		ft_printf("ERROR\nThere is no valid path on this map!\n");
 		ft_free_map2(map_dup, data->lines);
 		return (0);
 	}
