@@ -56,7 +56,7 @@ int	map_path(t_data *data, char **map, int x, int y)
 	if (e == 1 && c == data->total_collect)
 		return (1);
 	else
-		return (ft_printf("ERROR\n"));
+		return (0);
 }
 
 /*void	print_map(char **map)
