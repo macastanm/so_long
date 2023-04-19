@@ -25,9 +25,8 @@ void	exit_position(t_data *data)
 		{
 			if (data->map[i][j] == 'E')
 			{
-				data->exit++;
-				data->exit_x = i;
-				data->exit_y = j;
+				data->exit_x = j;
+				data->exit_y = i;
 			}
 			j++;
 		}
@@ -45,7 +44,11 @@ int	map_path(t_data *data, char **map, int x, int y)
 		|| map[y][x] == '1' || map[y][x] == 'X')
 		return (0);
 	if (map[y][x] == 'E')
+	{
 		e++;
+		map[y][x] = 'X';
+		return (0);
+	}
 	if (map[y][x] == 'C')
 		c++;
 	map[y][x] = 'X';
@@ -59,7 +62,7 @@ int	map_path(t_data *data, char **map, int x, int y)
 		return (0);
 }
 
-/*void	print_map(char **map)
+/*void	print_map(char **map, t_data *data)
 {
 	int	i;
 	int	j;

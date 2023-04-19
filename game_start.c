@@ -62,6 +62,8 @@ void	xpm_to_img(t_data *data)
 			COLLECT, &data->x, &data->y);
 	data->exit_img = mlx_xpm_file_to_image(data->mlx_ptr,
 			EXIT, &data->x, &data->y);
+	data->exit_open_img = mlx_xpm_file_to_image(data->mlx_ptr,
+			EXIT_OPEN, &data->x, &data->y);
 	data->player_img = mlx_xpm_file_to_image(data->mlx_ptr,
 			PLAYER, &data->x, &data->y);
 }

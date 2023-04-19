@@ -18,6 +18,7 @@ void	move_w(t_data *data)
 		data->player_x * WINSIZE, data->player_y * WINSIZE);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->player_img,
 		data->player_x * WINSIZE, (data->player_y - 1) * WINSIZE);
+	data->map[data->player_y][data->player_x] = '0';
 	data->player_y -= 1;
 	data->moves++;
 	ft_printf("Player moves: %i\n", data->moves);
@@ -29,6 +30,7 @@ void	move_s(t_data *data)
 		data->player_x * WINSIZE, data->player_y * WINSIZE);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->player_img,
 		data->player_x * WINSIZE, (data->player_y + 1) * WINSIZE);
+	data->map[data->player_y][data->player_x] = '0';
 	data->player_y += 1;
 	data->moves++;
 	ft_printf("Player moves: %i\n", data->moves);
@@ -40,6 +42,7 @@ void	move_a(t_data *data)
 		data->player_x * WINSIZE, data->player_y * WINSIZE);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->player_img,
 		(data->player_x - 1) * WINSIZE, data->player_y * WINSIZE);
+	data->map[data->player_y][data->player_x] = '0';
 	data->player_x -= 1;
 	data->moves++;
 	ft_printf("Player moves: %i\n", data->moves);
@@ -51,6 +54,7 @@ void	move_d(t_data *data)
 		data->player_x * WINSIZE, data->player_y * WINSIZE);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->player_img,
 		(data->player_x + 1) * WINSIZE, data->player_y * WINSIZE);
+	data->map[data->player_y][data->player_x] = '0';
 	data->player_x += 1;
 	data->moves++;
 	ft_printf("Player moves: %i\n", data->moves);

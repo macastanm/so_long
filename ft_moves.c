@@ -84,11 +84,13 @@ int	move(char tecla, t_data *data)
 	{
 		data->caught_collect++;
 		data->map[data->player_y][data->player_x] = '0';
+		if (data->caught_collect == data->total_collect)
+			change_exit(data);
 	}
 	if (data->map[data->player_y][data->player_x] == 'E' &&
 				data->caught_collect == data->total_collect)
 	{
-		ft_printf("Congratulations, you won the game!\n");
+		ft_printf("🏆 Congratulations, you won the game!\n");
 		game_end(data);
 	}
 	return (0);

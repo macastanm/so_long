@@ -20,6 +20,7 @@ void	struct_start(t_data *data)
 	data->empty_img = 0;
 	data->collect_img = 0;
 	data->exit_img = 0;
+	data->exit_open_img = 0;
 	data->player_img = 0;
 	data->map = 0;
 	data->x = 0;

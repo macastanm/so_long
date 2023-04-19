@@ -24,6 +24,7 @@
 # define EMPTY "./textures/empty.xpm"
 # define COLLECT "./textures/collect.xpm"
 # define EXIT "./textures/exit.xpm"
+# define EXIT_OPEN "./textures/exit_open.xpm"
 # define PLAYER "./textures/player.xpm"
 # define WINSIZE 64
 
@@ -35,6 +36,7 @@ typedef struct s_data
 	void	*empty_img;
 	void	*collect_img;
 	void	*exit_img;
+	void	*exit_open_img;
 	void	*player_img;
 	char	**map;
 	int		x;
@@ -83,7 +85,7 @@ int		map_closed(t_data *data);
 
 void	exit_position(t_data *data);
 int		map_path(t_data *data, char **map_dup, int x, int y);
-//void	print_map(char **map);
+//void	print_map(char **map, t_data *data);
 
 // game_start
 
@@ -113,6 +115,7 @@ void	move_w(t_data *data);
 
 //game_end
 
+void	change_exit(t_data *data);
 int		game_end(t_data *data);
 
 #endif
